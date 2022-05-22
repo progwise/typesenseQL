@@ -1,6 +1,8 @@
 import { GraphQLSchema } from "graphql";
-import { query } from "../query";
+import { mutation } from "./mutation";
+import { query } from "./query";
 
 export const typesenseSchema = new GraphQLSchema({
-  query
+  query,
+  mutation
 })

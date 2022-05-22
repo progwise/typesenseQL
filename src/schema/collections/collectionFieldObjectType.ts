@@ -1,6 +1,6 @@
 import { GraphQLBoolean, GraphQLDirective, GraphQLInterfaceType, GraphQLObjectType, GraphQLString } from "graphql";
 
-export const collectionFieldInterfaceType = new GraphQLObjectType({
+export const collectionFieldObjectType = new GraphQLObjectType({
   name: 'CollectionField',
   description: 'Describes a field of a typesense collection',
   fields: {
@@ -20,5 +20,5 @@ export const collectionFieldInterfaceType = new GraphQLObjectType({
     facet: {
       type: GraphQLBoolean
     }
-  }
+  },
 })

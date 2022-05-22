@@ -1,5 +1,5 @@
 import { GraphQLInt, GraphQLList, GraphQLObjectType, GraphQLString } from 'graphql'
-import { collectionFieldInterfaceType } from './collectionFieldInterfaceType'
+import { collectionFieldObjectType } from './collectionFieldObjectType'
 
 export const collectionObjectType = new GraphQLObjectType({
   name: 'Collection',
@@ -12,7 +12,7 @@ export const collectionObjectType = new GraphQLObjectType({
       type: GraphQLInt
     },
     fields: {
-      type: new GraphQLList(collectionFieldInterfaceType)
+      type: new GraphQLList(collectionFieldObjectType)
     },
   }
 })
