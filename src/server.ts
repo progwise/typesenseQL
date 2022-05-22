@@ -1,20 +1,12 @@
-import { ApolloServer, gql } from 'apollo-server'
-import { graphql, buildSchema } from 'graphql'
+import { ApolloServer } from 'apollo-server'
 import { typesenseSchema } from './schema/typesenseSchema'
 
-
-const resolvers = {
-  Query: {
-    hallo: () => {
-      return 'hoihoi'
-    }
-  }
-}
-
 const server = new ApolloServer({
-  schema: typesenseSchema, resolvers, csrfPrevention: true
+  schema: typesenseSchema, csrfPrevention: true
 })
 
-server.listen().then(({url}) => {
+const serverPort = Number(process.env['TYPESENSEQL_PORT'] ?? '4000')
+
+server.listen(serverPort).then(({url}) => {
   console.log(`GraphQL server ready at ${url}`)
 })
